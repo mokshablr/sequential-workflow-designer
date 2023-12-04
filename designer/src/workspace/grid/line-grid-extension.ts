@@ -1,11 +1,12 @@
 import { Vector } from '../../core';
 import { GridExtension } from '../../designer-extension';
 import { LineGrid } from './line-grid';
+import { DotGrid } from './dot-grid';
 import { LineGridConfiguration } from './line-grid-configuration';
 
 const defaultConfiguration: LineGridConfiguration = {
-	gridSizeX: 48,
-	gridSizeY: 48
+	gridSizeX: 20,
+	gridSizeY: 20
 };
 
 export class LineGridExtension implements GridExtension {
@@ -15,8 +16,15 @@ export class LineGridExtension implements GridExtension {
 
 	private constructor(private readonly configuration: LineGridConfiguration) {}
 
-	public create(): LineGrid {
+	// public create(): LineGrid {
+	// 	const size = new Vector(this.configuration.gridSizeX, this.configuration.gridSizeY);
+	// 	return LineGrid.create(size);
+	// }
+
+	//arjun - DotGrid
+	public create(): DotGrid {
 		const size = new Vector(this.configuration.gridSizeX, this.configuration.gridSizeY);
-		return LineGrid.create(size);
+		return DotGrid.create(size);	
 	}
+	//arjun
 }
