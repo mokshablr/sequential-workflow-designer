@@ -61,7 +61,9 @@ export const createTaskStepComponentViewFactory =
 		const isInputViewHidden = stepContext.depth === 0 && stepContext.position === 0 && !stepContext.isInputConnected;
 		const isOutputViewHidden = isInterrupted;
 
-		const inputView = isInputViewHidden ? null : InputView.createRoundInput(g, boxWidth / 2, 0, cfg.inputSize);
+		// const inputView = isInputViewHidden ? null : InputView.createRoundInput(g, boxWidth / 2, 0, cfg.inputSize);
+		//arjun - arrowhead
+		const inputView = isInputViewHidden ? null : InputView.createArrowInput(g, boxWidth / 2, 0);
 		const outputView = isOutputViewHidden ? null : OutputView.create(g, boxWidth / 2, boxHeight, cfg.outputSize);
 
 		return {

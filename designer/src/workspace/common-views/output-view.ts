@@ -6,7 +6,7 @@ export class OutputView {
 			class: 'sqd-output',
 			cx: x,
 			cy: y,
-			r: size / 2
+			r: 0
 		});
 		parent.appendChild(circle);
 		return new OutputView(circle);

@@ -42,11 +42,25 @@ export class InputView {
 			class: 'sqd-input',
 			cx: x,
 			xy: y,
-			r: size / 2
+			r: 0
 		});
 		parent.appendChild(circle);
 		return new InputView(circle);
 	}
+
+	//arjun - arrowHead
+	public static createArrowInput(parent: SVGElement, x: number, y:number){
+		const arrowHead = Dom.svg('path', {
+			class: 'sqd-arrow',
+			d: 'M0 0 L5 9 L10 0 Z',
+			transform: `translate(${x - 3.5},${y - 5}) scale(0.7)`,
+			fill: '#d0d0d0',
+		});
+
+		parent.appendChild(arrowHead);
+		return new InputView(arrowHead);
+	}
+	//arjun
 
 	private constructor(private readonly root: SVGElement) {}
 
