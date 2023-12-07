@@ -6,6 +6,8 @@ import { ComponentContext } from '../../component-context';
 import { DefaultSequenceComponent } from '../sequence/default-sequence-component';
 import { SequencePlaceIndicator } from '../../designer-extension';
 import { Badges } from '../badges/badges';
+//arjun - Exit Label
+import { LabelView } from '../common-views';
 
 const SIZE = 30;
 const DEFAULT_ICON_SIZE = 22;
@@ -45,9 +47,22 @@ export class StartStopRootComponentView implements ComponentView {
 
 		Dom.translate(view.g, 0, SIZE);
 
-		const endCircle = createCircle(parentPlaceIndicator ? Icons.folder : Icons.stop, iconSize);
-		Dom.translate(endCircle, x, endY);
-		g.appendChild(endCircle);
+		// arjun - Exit Label
+		const endCircle = LabelView.create(
+			g,
+			0,
+			{
+				height: 22,
+				paddingX: 10,
+				minWidth: 40,
+				radius:10
+			},
+			'Exit',
+			'secondary'
+		);
+		const endCircleX = view.joinX;
+		Dom.translate(endCircle.g, endCircleX,  endY);
+		// arjun - ExitLabel
 
 		let startPlaceholder: Placeholder | null = null;
 		let endPlaceholder: Placeholder | null = null;

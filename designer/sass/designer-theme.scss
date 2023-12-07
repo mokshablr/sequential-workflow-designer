@@ -166,7 +166,7 @@
 	}
 }
 
-@mixin sqd-theme-join($theme, $joinStrokeColor: #000, $joinStrokeWidth: 2) {
+@mixin sqd-theme-join($theme, $joinStrokeColor: #d0d0d0, $joinStrokeWidth: 2) {
 	.sqd-theme-#{$theme} {
 		.sqd-join {
 			stroke-width: $joinStrokeWidth;
@@ -247,6 +247,14 @@
 		.sqd-root-start-stop-icon {
 			fill: $iconFillColor;
 		}
+		//arjun - Exit label colors
+		.sqd-label-rect{
+			fill: $circleFillColor;
+		}
+		.sqd-label-text{
+			fill: $iconFillColor;
+		}
+		//arjun
 	}
 }
 
